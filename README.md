@@ -52,7 +52,7 @@ readiness and maintainability.
 * **Initial Data Loading:** The `stores.json` file is automatically loaded with all stores into the database when the application starts for the very first time (it skips loading if data already exists).
 * **Store Search Endpoint:** Used PostgreSQL with PostGIS for geospatial data to efficiently find a configurable
   number of closest stores (defaulting to 5) to any given location.
-* **JWT Authentication:** Implemented JWT-based authentication for user login and registration.
+* **Secure API Authentication:** Implemented JWT-based authentication system for user registration and login, ensuring secure and controlled access to API endpoints.
 * **CRUD Stores:** Full CRUD (Create, Read, Update, Delete) capabilities for store entities.
 * **API Production Best Practices:** Used Data Transfer Objects (DTOs) and automated mapping for clean API contracts and
   robust
