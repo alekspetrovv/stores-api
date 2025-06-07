@@ -18,8 +18,8 @@ Follow these steps to quickly set up the project with Docker and test the API us
 
 1. **Clone the Repository:**
    ```bash
-   git clone [your-repository-url]
-   cd [your-project-folder]
+   git clone git@github.com:alekspetrovv/stores-api.git
+   cd stores-api
    ```
 
 2. **Start Docker Containers:**
