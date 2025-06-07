@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgis/postgis:13-3.4
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: jumbo
+      POSTGRES_PASSWORD: jumbo
+      POSTGRES_DB: jumbo-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    restart: always
+    ports:
+      - "3003:3003"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/jumbo-db
+      SPRING_DATASOURCE_USERNAME: jumbo
+      SPRING_DATASOURCE_PASSWORD: jumbo
+      # will be retrieved from Cloud in production environments
+      APPLICATION_SECURITY_JWT_SECRET_KEY: ugor9J+r5VHJtzzrvShIts8jsBWjTOhR9jwE+tyNWy8=
+      APPLICATION_SECURITY_JWT_EXPIRATION: 86400000
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
