@@ -38,7 +38,7 @@ Follow these steps to quickly set up the project with Docker and test the API us
    e.g., `Stores.postman_collection.json`) into Postman.
 
 2. **Select Environment:**
-   Select the imported environment from the dropdown menu in the top-right of Postman.
+   Select the imported `Development` environment from the dropdown menu in the top-right of Postman.
 
 3. **Run API Requests:**
    To access protected API resources, you must first authenticate. Begin by registering a new user account, then perform
@@ -49,6 +49,7 @@ Follow these steps to quickly set up the project with Docker and test the API us
 Beyond the core functionality, this project incorporates several engineering best practices to ensure production
 readiness and maintainability.
 
+* **Initial Data Loading:** The `stores.json` file is automatically loaded with all stores into the database when the application starts for the very first time (it skips loading if data already exists).
 * **Store Search Endpoint:** Used PostgreSQL with PostGIS for geospatial data to efficiently find a configurable
   number of closest stores (defaulting to 5) to any given location.
 * **JWT Authentication:** Implemented JWT-based authentication for user login and registration.
